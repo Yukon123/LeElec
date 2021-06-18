@@ -1,0 +1,19 @@
+/* components/NavHeader.wxss */
+.header {
+  padding-bottom: 10rpx;
+}
+.title {
+  color: #666;
+  height: 40rpx;
+}
+.word {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.more {
+  border: 1px solid black;
+  padding: 14rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+}
