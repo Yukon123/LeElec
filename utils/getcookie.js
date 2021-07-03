@@ -1,6 +1,6 @@
-export default function request(url, data = {}, method = 'GET') {
+export default function getcookie(url, data = {}, method = 'GET') {
   return new Promise((resolve, reject) => {
-    let token = ''
+    // let token = ''
     let header = {
       'content-type': 'application/json', // 默认值
     }
@@ -8,21 +8,27 @@ export default function request(url, data = {}, method = 'GET') {
     //   token = wx.getStorageSync('token')
     //   header.Authorization = token
     // }
-    if (wx.getStorageSync('cookies')) {
-      let cookies = wx.getStorageSync('cookies')
-      header.cookie = cookies
-    }
     wx.request({
-      // url: 'http://127.0.0.1:3000' + url,
+      // url: 'http://hjyjorv.nat.ipyingshe.com' + url,
       url: 'http://f6v95jt3.dongtaiyuming.net:27359' + url,
-      // url: 'http://127.0.0.1:3000' + url,   两个都要改  getcookie也要改
       data,
       method,
       header,
       success: (res) => {
-        resolve(res.data)
+        console.log(res)
+        resolve(res)
+        if (wx.getStorageSync('cookies')) {
+          return
+        }
+        wx.setStorage({
+          key: 'cookies',
+          data: res.cookies.find((item) => {
+            return item.indexOf('MUSIC') !== -1
+          }),
+        })
       },
       fail: (err) => {
+        console.log(err)
         reject(err)
       },
     })

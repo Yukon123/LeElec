@@ -1,21 +1,25 @@
 .index {
   height: 100vh;
 }
+
 /* 轮播图 */
 .swiper {
   width: 100%;
   height: 300rpx;
 }
+
 .swiper image {
   width: 100%;
   height: 100%;
 }
+
 /* 字体图标栏 */
 .navgation {
   display: flex;
   justify-content: space-around;
   padding-bottom: 10rpx;
 }
+
 .navitem {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,7 @@
   background-color: red;
   border-radius: 50%;
 }
+
 .navitem text {
   font-size: 26rpx;
 }
@@ -41,39 +46,24 @@
 .recommendContainer {
   padding: 20rpx 20rpx 0;
 }
-.recommend-head {
-  padding-bottom: 10rpx;
-}
-.recommend-head .title {
-  color: #666;
-  height: 40rpx;
-}
-.recommend-head .word {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.recommend-head .word .more {
-  border: 0.604rpx solid black;
-  padding: 14rpx;
-  border-radius: 40rpx;
-  font-size: 24rpx;
-}
 
 .recommend-scroll {
   display: flex;
   justify-content: start;
   height: 300rpx;
 }
+
 .scroll-item {
   margin-right: 10rpx;
 }
+
 .scroll-item image {
   height: 200rpx;
   width: 200rpx;
   border-radius: 8rpx;
 }
-.scroll-item view {
+
+.scroll-text {
   font-size: 24rpx;
   width: 200rpx;
   display: -webkit-box;
@@ -87,9 +77,11 @@
 .billboard {
   padding: 0rpx 20rpx 0rpx 20rpx;
 }
+
 .billswiper {
   height: 450rpx;
 }
+
 .billswiper-item {
   background-color: #fbfbfb;
 }
@@ -99,22 +91,26 @@
   display: flex;
   align-items: center;
 }
+
 .bill-index {
   width: 100rpx;
   height: 100rpx;
   text-align: center;
   line-height: 100rpx;
 }
+
 .bill-image {
   height: 100rpx;
   width: 100rpx;
 }
+
 .bill-name {
   max-width: 380rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.ttt {
-  height: 50px;
+
+.test {
+  height: 1000rpx;
 }

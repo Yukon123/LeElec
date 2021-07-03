@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml--> 测试页面
+<tabbar bind:clickTag="click" title="{{titileLIst}}"></tabbar>

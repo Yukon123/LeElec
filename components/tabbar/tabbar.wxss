@@ -1,0 +1,17 @@
+/* components/tabbar/tabbar.wxss */
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tabbar-item {
+  padding: 10px;
+  background-color: red;
+
+}
+
+.active {
+  color: red;
+  border-bottom: 1px solid red;
+}

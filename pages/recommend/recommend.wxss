@@ -1,0 +1,75 @@
+/* pages/recommend/recommend.wxss */
+.recommend {
+  height: 100%;
+  width: 100%;
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+.header image {
+  width: 100%;
+  height: 100%;
+}
+.time {
+  height: 1000;
+
+  text-align: center;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+}
+.date {
+  font-size: 36rpx;
+  color: #fff;
+}
+.mouth {
+  font-size: 32rpx;
+  color: #fff;
+}
+/* 控制栏 */
+.playlist {
+  position: relative;
+
+  border-radius: 30rpx;
+  margin-top: -20rpx;
+  background-color: #fff;
+  height: 100%;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx 0rpx;
+}
+.play-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+}
+
+.item-image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 10rpx;
+}
+.item-word {
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.item-name,
+.item-disc {
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-icon {
+  right: 0;
+  height: 80rpx;
+  width: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}

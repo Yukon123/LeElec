@@ -1,0 +1,108 @@
+/* pages/search/search.wxss */
+.search-header {
+  display: flex;
+  padding: 20rpx 0rpx;
+  /* border-bottom: 2rpx solid grey; */
+}
+.header-icon {
+  padding-left: 20rpx;
+  text-align: center;
+}
+.placeholder {
+  font-size: 28rpx;
+}
+.search-header input {
+  flex: 1;
+  background-color: rgba(244, 244, 244, 0.3);
+}
+
+.header-cancel {
+  width: 140rpx;
+  text-align: center;
+  background-color: #fff;
+}
+/* 搜索历史记录 */
+.search-history {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  white-space: nowrap;
+  justify-items: flex-start;
+  position: relative;
+}
+.history-title {
+  margin-right: 20rpx;
+}
+.history-item {
+  background-color: #eeeeee;
+  padding: 6rpx 32rpx;
+  margin: 10rpx;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-icon {
+  right: 40rpx;
+  bottom: 8rpx;
+
+  position: absolute;
+  font-size: 36rpx;
+}
+/* 热搜区域 */
+.search-hotlist {
+  padding: 20rpx;
+}
+.hotlist-title {
+  padding-bottom: 20rpx;
+  border-bottom: 4rpx solid #e4dfdf;
+}
+.hotlist-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotlist-item {
+  display: flex;
+  width: 50%;
+  padding: 20rpx 0rpx;
+  align-items: center;
+}
+.item-index {
+  display: inline-block;
+
+  text-align: left;
+  padding-right: 20rpx;
+}
+.item-title {
+  max-width: 300rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-image {
+  padding-left: 20rpx;
+  width: 40rpx;
+  height: 30rpx;
+}
+/* 搜索内容 */
+.result-head {
+  color: #e20001;
+  font-size: 24rpx;
+  margin: 0rpx 40rpx;
+  padding: 20rpx 0rpx;
+  border-bottom: 2rpx solid #e20001;
+}
+.result-item {
+  display: flex;
+  padding: 16rpx;
+  /* background-color: red; */
+  border-bottom: 2rpx solid #e4dfdf;
+  align-items: center;
+}
+.result-icon {
+  padding-right: 20rpx;
+  text-align: center;
+}

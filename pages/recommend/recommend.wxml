@@ -1,0 +1,30 @@
+<!--pages/recommend/recommend.wxml-->
+<view class="recommend">
+	<view class="header">
+		<image src="/static/images/recommendSong/recommendSong.jpg" />
+		<view class="time">
+			<text class="date">{{date}} / </text>
+			<text class="mouth">{{mouth}}</text>
+		</view>
+	</view>
+	<view class='playlist'>
+		<view class="list-header">
+			<text>播放全部</text>
+			<text>多选</text>
+		</view>
+		<view
+		 class="play-item"
+		 wx:for="{{playList}}"
+		 wx:key="id"
+		 bindtap="toMusicDetail"
+		 id="{{item.id}}">
+			<image src="{{item.album.picUrl}}" class="item-image" />
+			<view class="item-word">
+				<view class="item-name">{{item.name}}</view>
+				<view class="item-disc">{{item.artists[0].name}}</view>
+			</view>
+			<i class="iconfont icon-gengduo item-icon"></i>
+		</view>
+	</view>
+</view>
+

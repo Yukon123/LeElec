@@ -1,0 +1,130 @@
+/* pages/video/video.wxss */
+.view-header {
+  display: flex;
+}
+.view-header image {
+  height: 60rpx;
+  width: 60rpx;
+  margin: 10rpx;
+}
+.view-header view {
+  flex: 1;
+  text-align: center;
+  color: red;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 5rpx;
+  border: 2rpx solid #eee;
+  margin: 10rpx 0rpx;
+}
+.header-search {
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  height: 44rpx;
+  line-height: 44rpx;
+  padding-left: 20rpx;
+}
+.header-search input {
+  /* background-color: red; */
+  height: 100%;
+  text-align: left;
+  color: grey;
+}
+.header-search .placeholder {
+  text-align: center;
+}
+.view-nav {
+  display: flex;
+  white-space: nowrap;
+  height: 80rpx;
+  position: relative;
+  top: 0;
+  /* background-color: red; */
+}
+
+.nav-title {
+  padding: 12rpx 0rpx;
+  margin: 0rpx 40rpx 0rpx;
+}
+.nav-active {
+  border-bottom: 2rpx solid red;
+}
+
+/* 视频区域 */
+.videoScroll {
+  margin-top: 10rpx;
+  /* calc: 可以动态计算css的宽高， 运算符左右两侧必须加空格，否则计算会失效 */
+  /* 视口单位： vh vw  1vh = 1%的视口高度  1vw = 1%的视口宽度*/
+  height: calc(100vh - 174rpx);
+  /*height: calc(100vh - 100rpx); 用来测试页面上拉触底*/
+}
+.videoItem {
+  padding: 0 3%;
+}
+/*.videoItem video {*/
+/*width: 100%;*/
+/*height: 360rpx;*/
+/*border-radius: 10rpx;*/
+/*}*/
+
+.videoItem .common {
+  width: 100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+}
+
+.videoItem .content {
+  font-size: 26rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  max-width: 700rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* footer */
+.footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.footer .comments_praised {
+  float: right;
+}
+
+.comments_praised .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.comments_praised .btn:after {
+  border: none;
+}
+
+.comments_praised .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+
+.comments_praised .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 20rpx;
+}

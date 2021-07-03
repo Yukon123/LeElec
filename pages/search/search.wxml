@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<view class="search">
+	<!-- 头部区域 -->
+	<view class="search-header">
+		<icon class="header-icon" type="search" size="22"></icon>
+		<input
+		 type="text"
+		 placeholder="{{placeHolder}}"
+		 placeholder-class="placeholder"
+		 value="{{keyWords}}"
+		 bindinput="handleInput" />
+		<text class="header-cancel" bindtap="tapCancelButton">取消</text>
+	</view>
+	<!--搜索内容 -->
+	<block wx:if="{{isShowResult}}">
+		<view class="search-result">
+			<view class="result-head">搜索内容: '{{keyWords}}' </view>
+			<view class="result-body">
+				<view
+				 class="result-item"
+				 wx:for="{{keySearchResult}}"
+				 wx:key="id"
+				 bindtap="tapSearchResult"
+				 id="{{item.id}}"
+				 data-name="{{item.name}}"
+				 data-id="{{item.id}}">
+					<icon class="result-icon" type="search" size="22"></icon>
+					<text>{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="search-hotlist">
+			<view class="search-history" wx:if="{{searchHistory.length}}">
+				<text class="history-title">历史</text>
+				<view
+				 class="history-item"
+				 wx:for="{{searchHistory}}"
+				 wx:key="index"
+				 bindtap="tapHotSearchItem"
+				 data-name="{{item}}">
+					<text class="history-text">{{item}}</text>
+				</view>
+				<i class="iconfont icon-lajixiang history-icon" bindtap="tapCancelIcon"></i>
+			</view>
+			<view class="hotlist-title">热搜榜</view>
+			<view class="hotlist-body">
+				<view
+				 class="hotlist-item"
+				 wx:for="{{hotSearchList}}"
+				 wx:key="score"
+				 bindtap="tapHotSearchItem"
+				 id="{{item.searchWord}}">
+					<text class="item-index">{{index+1}}</text>
+					<text class="item-title">{{item.searchWord}}</text>
+					<image src="{{item.iconUrl}}" wx:if="{{item.iconUrl}}" class="item-image" />
+				</view>
+			</view>
+		</view>
+	</block>
+</view>
+
