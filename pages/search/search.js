@@ -15,11 +15,18 @@ Page({
   },
   async getPlaceHolder() {
     const res = await request('/search/default')
+    if (res.code !== 200) {
+      return console.log(res.msg)
+    }
+    console.log(res)
     let placeHolder = res.data.showKeyword
     this.setData({ placeHolder })
   },
   async getHotSearchList() {
     const res = await request('/search/hot/detail')
+    if (res.code !== 200) {
+      return console.log(res.msg)
+    }
     let hotSearchList = res.data
     this.setData({ hotSearchList })
   },
@@ -76,12 +83,10 @@ Page({
     let index = searchHistory.indexOf(name)
     if (index !== -1) {
       searchHistory.splice(index, 1)
-      searchHistory.unshift(name)
-      this.setData({ searchHistory })
-    } else {
-      searchHistory.unshift(name)
-      this.setData({ searchHistory })
     }
+    searchHistory.unshift(name)
+    this.setData({ searchHistory })
+
     wx.setStorage({
       key: 'searchHis',
       data: JSON.stringify(searchHistory),
@@ -93,8 +98,10 @@ Page({
   onLoad: function (options) {
     this.getPlaceHolder()
     this.getHotSearchList()
-    let searchHistory = JSON.parse(wx.getStorageSync('searchHis'))
-    this.setData({ searchHistory })
+    if (wx.getStorageSync('searchHis')) {
+      let searchHistory = JSON.parse(wx.getStorageSync('searchHis'))
+      this.setData({ searchHistory })
+    }
   },
 
   /**

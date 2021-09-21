@@ -4,13 +4,8 @@ export default function getcookie(url, data = {}, method = 'GET') {
     let header = {
       'content-type': 'application/json', // 默认值
     }
-    // if (wx.getStorageSync('token')) {
-    //   token = wx.getStorageSync('token')
-    //   header.Authorization = token
-    // }
     wx.request({
-      // url: 'http://hjyjorv.nat.ipyingshe.com' + url,
-      url: 'http://f6v95jt3.dongtaiyuming.net:27359' + url,
+      url: 'http://39.108.224.26:5002' + url,
       data,
       method,
       header,

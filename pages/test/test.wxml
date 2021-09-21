@@ -1,2 +1,12 @@
 <!--pages/test/test.wxml--> 测试页面
 <tabbar bind:clickTag="click" title="{{titileLIst}}"></tabbar>
+<view>000000000000000000</view>
+<view>
+	<slider
+	 min="0"
+	 max="100"
+	 show-value
+	 left-icon="cancel"
+	 right-icon="success_no_circle" />
+</view>
+

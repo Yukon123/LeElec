@@ -10,7 +10,6 @@ Page({
     recommendIdList: [],
     billboardList: [],
     billboardIdList: [],
-    res: {},
   },
   //options(Object)
   toDailyRecommend() {
@@ -19,7 +18,6 @@ Page({
     })
   },
   toMusicDetail(e) {
-    console.log(e)
     wx.navigateTo({
       url: `/pages/songDetail/songDetail?id=${e.currentTarget.id}&list=${this.idList}`,
     })
@@ -66,19 +64,13 @@ Page({
     // })
   },
   tapBillboard(e) {
-    // console.log('00000')
-    // this.setData({ res: e })
-    // console.log(e)
     wx.showLoading({
       title: '排行加载中',
       mask: true,
-      success: (result) => {},
-      fail: () => {},
-      complete: () => {},
     })
     wx.navigateTo({
       url: `/pages/songDetail/songDetail?id=${e.currentTarget.id}`,
-      success: (result) => {
+      success: () => {
         wx.hideLoading()
       },
     })
@@ -96,14 +88,4 @@ Page({
     //排行榜
     this.getbillboardList()
   },
-
-  onReady: function () {},
-  onHide: function () {},
-  onUnload: function () {},
-  onPullDownRefresh: function () {},
-  onReachBottom: function () {},
-  onShareAppMessage: function () {},
-  onPageScroll: function () {},
-  //item(index,pagePath,text)
-  onTabItemTap: function (item) {},
 })

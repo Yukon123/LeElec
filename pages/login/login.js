@@ -1,19 +1,13 @@
-import request from '../../utils/getcookie'
-
-// pages/login/login.js
+import getcookie from '../../utils/getcookie'
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-    phonenum: '17750597459',
-    password: 'wm123456',
+    phonenum: '',
+    password: '',
     userInfo: {},
   },
 
   handleInput(e) {
-    console.log(e)
-    const type = e.currentTarget.id
+    const type = e.currentTarget.id //id="password or phonenum"
     this.setData({
       [type]: e.detail.value,
     })
@@ -31,7 +25,7 @@ Page({
     } else {
       console.log('验证通过')
     }
-    const res = await request('/login/cellphone', params).catch((err) => console.log(err))
+    const res = await getcookie('/login/cellphone', params).catch((err) => console.log(err))
     console.log(res)
     if (res.data.code !== 200) {
       wx.showToast({
@@ -40,12 +34,6 @@ Page({
       })
       return
     }
-
-    // wx.setStorage({
-    //   key: 'token',
-    //   data: res.data.token,
-    // })
-
     wx.setStorage({
       key: 'userInfo',
       data: JSON.stringify(res.data.profile),
@@ -91,43 +79,4 @@ Page({
     }
     return 1
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  async onUnload() {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
 })
